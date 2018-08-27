@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Mail</title>
+
+  <style type="text/css">
+    /*////// RESET STYLES //////*/
+
+    body,
+    #bodyTable,
+    #bodyCell {
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    img,
+    a img {
+      border: 0;
+      outline: none;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    /*////// CLIENT-SPECIFIC STYLES //////*/
+
+    .ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    table,
+    td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    #outlook a {
+      padding: 0;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    body,
+    table,
+    td,
+    p,
+    a,
+    li,
+    blockquote {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /*////// FRAMEWORK STYLES //////*/
+
+    .flexibleContainerCell {
+      padding-top: 20px;
+      padding-Right: 20px;
+      padding-Left: 20px;
+    }
+
+    .flexibleContainerCell2 {
+      padding-top: 20px;
+      padding-Right: 60px;
+      padding-Left: 40px;
+    }
+
+    .flexibleImage {
+      height: auto;
+    }
+
+    .bottomShim {
+      padding-bottom: 20px;
+    }
+
+    .imageContent,
+    .imageContentLast {
+      padding-bottom: 20px;
+    }
+
+    .nestedContainerCell {
+      padding-top: 20px;
+      padding-Right: 20px;
+      padding-Left: 20px;
+    }
+
+    /*////// GENERAL STYLES //////*/
+
+    body,
+    #bodyTable {
+      background-color: #F5F5F5;
+    }
+
+    #bodyCell {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    #emailBody {
+      background-color: #FFFFFF;
+      border: 1px solid #DDDDDD;
+      border-collapse: separate;
+      border-radius: 4px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #FFF;
+      font-family: Helvetica;
+      font-size: 30px;
+      line-height: 125%;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    #templatePreheader {
+      background-color: #008c3c;
+    }
+
+    .preheaderContent {
+      color: #fff;
+      font-weight: bold;
+      font-family: Helvetica;
+      font-size: 12px;
+      line-height: 125%;
+      text-align: center;
+    }
+
+    .preheaderContent a:link,
+    .preheaderContent a:visited,
+    /* Yahoo! Mail Override */
+
+    .preheaderContent a .yshortcuts
+    /* Yahoo! Mail Override */
+
+      {
+      color: #fff;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+
+    #templateHeader {
+      background-color: #F4F4F4;
+      border-top: 1px solid #FFFFFF;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .textContent,
+    .textContentLast {
+      color: #008c3c;
+      font-family: Helvetica;
+      font-size: 12px;
+      line-height: 125%;
+      text-align: center;
+      font-weight: bold;
+      padding: 0 60px;
+    }
+
+    .textContent a,
+    .textContentLast a {
+      color: #008c3c;
+      text-decoration: underline;
+    }
+
+    .nestedContainer {
+      background-color: #E5E5E5;
+      border: 1px solid #CCCCCC;
+    }
+
+    .emailButton {
+      background-color: #c1d62f;
+      border-collapse: separate;
+      border-style: solid;
+      border-radius: 12px;
+    }
+
+    .buttonContent {
+      color: #225b37;
+      font-family: Helvetica;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 100%;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .buttonContent2 {
+      color: #fff;
+      font-family: Helvetica;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 100%;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .buttonContent a {
+      color: #225b37;
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .buttonContent2 a {
+      color: #fff;
+      display: block;
+      text-decoration: none;
+    }
+
+    .emailCalendar {
+      background-color: #FFFFFF;
+      border: 1px solid #CCCCCC;
+    }
+
+    /*////// MOBILE STYLES //////*/
+
+    @media only screen and (max-width: 480px) {
+      /*////// SPECIFIC STYLES //////*/
+      body {
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+      table[id="emailBody"] {
+        width: 100% !important;
+      }
+
+      img[class="flexibleImage"] {
+        height: auto !important;
+        width: 100% !important;
+      }
+      td[class="buttonContent"] {
+        padding: 0 !important;
+      }
+      td[class="buttonContent"] a {
+        padding: 15px !important;
+      }
+
+      td[class="textContentLast"],
+      td[class="imageContentLast"] {
+        padding-top: 20px !important;
+      }
+
+      /*////// GENERAL STYLES //////*/
+      td[id="bodyCell"] {
+        padding-top: 10px !important;
+        padding-Right: 10px !important;
+        padding-Left: 10px !important;
+      }
+    }
+  </style>
+  <!--[if mso 12]>
+            <style type="text/css">
+            	.flexibleContainer{display:block !important; width:100% !important;}
+            </style>
+        <![endif]-->
+  <!--[if mso 14]>
+            <style type="text/css">
+            	.flexibleContainer{display:block !important; width:100% !important;}
+            </style>
+        <![endif]-->
+</head>
+
+<body>
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+      <tr>
+        <td align="center" valign="top" id="bodyCell">
+          <!--EMAIL CONTAINER -->
+          <table border="0" cellpadding="0" cellspacing="0" width="600" id="emailBody">
+            <!--MODULE ROW -->
+            <tr>
+              <td align="center" valign="top">
+                <!-- CENTERING TABLE // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td align="center" valign="top">
+                      <!-- BEGIN PREHEADER // -->
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
+                        <tr>
+                          <td valign="top" width="50%" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px; text-align:left;">
+                            ¡Promoci&oacute;n 2 x 1 <strong style="color: #c2ce30;">Localiza!</strong>
+                          </td>
+                          <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+                          <td valign="top" width="50%" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;">
+                            ¿No te muestra el contenido?<a style="color: #c2ce30;font-weight: bold;" href="#" target="_blank">Clic aqui</a>.
+                          </td>
+                          <!-- *|END:IF|* -->
+                        </tr>
+                      </table>
+                      <!-- // END PREHEADER -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="top" bgcolor="#008c3c">
+                      <!-- HEADER // -->
+                      <table border="0" cellpadding="0" cellspacing="0" width="600">
+                        <tr>
+                          <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr>
+                                <td valign="top" align="center">
+                                  <img src="img/logo.png" width="290px" style="max-width:600px;display:block;" />
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- // HEADER -->
+                    </td>
+                  </tr>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!-- // MODULE ROW -->
+            <!-- MODULE ROW // -->
+            <tr>
+              <td valign="top" align="center">
+                <img src="img/banner.jpg" width="100%" style="max-width:600px;display:block;" />
+              </td>
+            </tr>
+
+            <!--TWO SECTION -->
+            <tr>
+              <td align="center" valign="top" bgcolor="#006b3c">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td align="center" valign="top">
+
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+                          <tbody>
+                            <tr>
+                              <td align="center" valign="top" width="600" class="flexibleContainerCell">
+
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tbody>
+                                    <tr>
+                                      <td valign="top" class="textContent">
+                                        <p style="color: #fff; font-size: 22px; line-height: 125%;">
+                                          Reserva y recibe <strong>el doble</strong> de los <strong>d&iacute;as</strong><br /> que <strong>alquiles tu carro.</strong>
+                                        </p>
+                                        <hr style="border-style: solid; border-color: #bed000;width: 20%;">
+                                      </td>
+                                    </tr>
+                                    <!--GO TO ACTION // -->
+                                    <tr>
+                                      <td valign="top">
+                                        <a href="#"><img src="img/boton.png" width="540px" style="max-width:540px;display:block;margin-top: 10px;" /></a>
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td valign="top" class="textContent">
+                                        <p style="font-size: 26px; line-height: 100%; margin-bottom: 6px; font-weight: normal; color: #bed000;">Para reservar llama<br />a nuestra l&iacute;nea:</p>
+                                        <h3 style="padding-bottom: 20px; font-size: 28px; color: #bed000;">01 8000 520001 - 444 2001</h3>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <!--// TWO SECTION -->
+            <!--THREE SECTIONS -->
+            <tr>
+              <td align="center" valign="top" bgcolor="#b7cd06">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                  <tbody>
+                    <tr>
+                      <td align="center" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+                          <tbody>
+                            <tr>
+                              <td align="center" valign="top" width="600" class="flexibleContainerCell">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tbody>
+                                    <tr>
+                                      <td valign="top" class="textContent" style="text-align:left;padding-bottom:15px ;">
+                                        Términos y Condiciones: Incluye IVA y protección básica. Promoción válida en todas las gamas,
+                                        según disponibilidad. Excepto gama C. El vehículo podrá ser utilizado hasta el 31 de Agosto de
+                                        2018 Promoción disponible a nivel nacional. Consulta agencias y gamas en www.localiza.com
+                                        Válido para rentar máximo 5 días )recibes en total 10 días). No es acumulable con otras
+                                        promociones. Aplica solo para Persona Natural. En caso de que el cliente tome algún servicio
+                                        adicional aplica el 2x1. Si el cliente Corporativo desea tomar promoción, debe hacer el pago en
+                                        la agencia, con tarifa de Persona Natural.
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--//THREE SECTION -->
+            <!--FOOTER -->
+            <tr>
+              <td align="center" valign="top">
+                <!-- CENTERING TABLE // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td align="center" valign="top" bgcolor="#006b3c">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+                          <tbody>
+                            <tr>
+                              <td valign="top" width="600" class="flexibleContainerCell" style="padding-top: 10px; padding-bottom: 10px;">
+                                <table align="center" valign="top" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                    <tr>
+                                    <td>
+                                      <a href="#" target="_blank" style="display: block; text-decoration: none;"><h3 style="color:#fff;font-size:16px;">www.localiza.com</h3></a>
+                                    </td>
+                                    <td>
+                                      <a href="#" target="_blank"><img src="img/iconfb.png" width=""35px alt="" style="max-width:35px;"></a>
+                                    </td>
+                                    <td>
+                                      <a href="#" target="_blank"><img src="img/iconinst.png" width=""35px alt="" style="max-width:35px;"></a>
+                                    </td>
+
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="top" align="center" style="font-size: 11px; color: #fff;" class="textContent">
+                                <unsubscribe>Desuscribirme</unsubscribe> de esta lista.</p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <!--// FOOTER -->
+          </table>
+          <!-- // EMAIL CONTAINER -->
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+
+</html>

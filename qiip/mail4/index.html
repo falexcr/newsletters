@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Mail</title>
+
+  <style type="text/css">
+    /*////// RESET STYLES //////*/
+
+    body,
+    #bodyTable,
+    #bodyCell {
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    img,
+    a img {
+      border: 0;
+      outline: none;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    /*////// CLIENT-SPECIFIC STYLES //////*/
+
+    .ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    table,
+    td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    #outlook a {
+      padding: 0;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    body,
+    table,
+    td,
+    p,
+    a,
+    li,
+    blockquote {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /*////// FRAMEWORK STYLES //////*/
+
+    .flexibleContainerCell {
+      padding-top: 0;
+      padding-Right: 20px;
+      padding-Left: 20px;
+    }
+
+    .flexibleContainerCell2 {
+      padding-top: 20px;
+      padding-Right: 40px;
+      padding-Left: 0;
+    }
+
+    .flexibleImage {
+      height: auto;
+    }
+
+    .bottomShim {
+      padding-bottom: 20px;
+    }
+
+    .imageContent,
+    .imageContentLast {
+      padding-bottom: 0;
+    }
+
+    .nestedContainerCell {
+      padding-top: 20px;
+      padding-Right: 20px;
+      padding-Left: 20px;
+    }
+
+    /*////// GENERAL STYLES //////*/
+
+    body,
+    #bodyTable {
+      background-color: #F5F5F5;
+    }
+
+    #bodyCell {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    #emailBody {
+      background-color: #FFFFFF;
+      border: 1px solid #DDDDDD;
+      border-collapse: separate;
+      border-radius: 4px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #ab1ee6;
+      font-family: Helvetica;
+      font-size: 20px;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    #templatePreheader {
+      background-color: #FFFFFF;
+    }
+
+    .preheaderContent {
+      color: #939393;
+      font-weight: bold;
+      font-family: Helvetica;
+      font-size: 12px;
+      line-height: 125%;
+      text-align: left;
+    }
+
+    .preheaderContent a:link,
+    .preheaderContent a:visited,
+    /* Yahoo! Mail Override */
+
+    .preheaderContent a .yshortcuts
+    /* Yahoo! Mail Override */
+
+      {
+      color: #939393;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+
+    #templateHeader {
+      background-color: #F4F4F4;
+      border-top: 1px solid #FFFFFF;
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .textContent,
+    .textContentLast {
+      color: #989898;
+      font-family: Helvetica;
+      font-size: 16px;
+      line-height: 125%;
+      text-align: Left;
+      padding-bottom: 20px;
+    }
+
+    .textContent2,
+    .textContentLast2 {
+      color: #989898;
+      font-family: Helvetica;
+      font-size: 16px;
+      line-height: 125%;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    p {
+      color: #989898;
+      font-family: Helvetica;
+      font-size: 14px;
+      line-height: 125%;
+      text-align: Left;
+      padding-bottom: 20px;
+    }
+
+    .textContent a,
+    .textContentLast a {
+      color: #ab1ee6;
+      text-decoration: underline;
+    }
+
+    .nestedContainer {
+      background-color: #E5E5E5;
+      border: 1px solid #CCCCCC;
+    }
+
+    .emailButton {
+      background-color: #00e6dc;
+      border-collapse: separate;
+      border-style: solid;
+      border-radius: 10px;
+    }
+
+    .buttonContent {
+      color: #a000e8;
+      font-family: Helvetica;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 100%;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .buttonContent a {
+      color: #a000e8;
+      display: block;
+      text-decoration: none;
+    }
+
+    /*////// MOBILE STYLES //////*/
+
+    @media only screen and (max-width: 480px) {
+      /*////// SPECIFIC STYLES //////*/
+      body {
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+      table[id="emailBody"] {
+        width: 100% !important;
+      }
+
+      img[class="flexibleImage"] {
+        height: auto !important;
+        width: 100% !important;
+      }
+      td[class="buttonContent"] {
+        padding: 0 !important;
+      }
+      td[class="buttonContent"] a {
+        padding: 15px !important;
+      }
+
+      td[class="textContentLast"],
+      td[class="imageContentLast"] {
+        padding-top: 20px !important;
+      }
+
+      /*////// GENERAL STYLES //////*/
+      td[id="bodyCell"] {
+        padding-top: 10px !important;
+        padding-Right: 10px !important;
+        padding-Left: 10px !important;
+      }
+    }
+  </style>
+  <!--[if mso 12]>
+            <style type="text/css">
+            	.flexibleContainer{display:block !important; width:100% !important;}
+            </style>
+        <![endif]-->
+  <!--[if mso 14]>
+            <style type="text/css">
+            	.flexibleContainer{display:block !important; width:100% !important;}
+            </style>
+        <![endif]-->
+</head>
+
+<body>
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+      <tr>
+        <td align="center" valign="top" id="bodyCell">
+          <!--EMAIL CONTAINER -->
+          <table border="0" cellpadding="0" cellspacing="0" width="600" id="emailBody">
+            <!--MODULE ROW -->
+            <tr>
+              <td align="center" valign="top">
+                <!-- CENTERING TABLE // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td align="center" valign="top">
+                      <!-- BEGIN PREHEADER // -->
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
+                        <tr>
+                          <td valign="top" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px; text-align:left;">
+                            &nbsp;
+                          </td>
+                          <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+                          <td valign="top" width="230" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;">
+                            ¿No te muestra el contenido?<a style="color: #ab1ee6;font-weight: bold;" href="#" target="_blank">Clic aqui</a>.
+                          </td>
+                          <!-- *|END:IF|* -->
+                        </tr>
+                      </table>
+                      <!-- // END PREHEADER -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" align="center">
+                      <!-- CENTERING TABLE // -->
+                      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td valign="top" align="center" bgcolor="#ab1ee6">
+                              <!-- FLEXIBLE CONTAINER // -->
+                              <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="flexibleContainerCell" width="600" valign="top">
+
+
+                                      <!-- CONTENT TABLE // -->
+                                      <table class="flexibleContainer" width="200" cellspacing="0" cellpadding="0" border="0" align="right">
+                                        <tbody>
+                                          <tr>
+                                            <td class="textContent" valign="top" align="Left" style="padding-bottom:0;padding-top:10px;">
+                                              <p style="color:#fff;text-align:right;padding-bottom: 0; margin: 0;"><strong>Hola, </strong>Carolina Gonz&aacute;lez <br /><span style="color:#58eadd;font-weight:bold;">Bienvenido a qiip</span></p>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <!-- // CONTENT TABLE -->
+
+
+                                      <!-- CONTENT TABLE // -->
+                                      <table class="flexibleContainer" width="340" cellspacing="0" cellpadding="0" border="0" align="left">
+                                        <tbody>
+                                          <tr>
+                                            <td class="textContent" valign="top" align="Left">
+
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <!-- // CONTENT TABLE -->
+
+
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- // FLEXIBLE CONTAINER -->
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- // CENTERING TABLE -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" align="center">
+                      <!-- CENTERING TABLE // -->
+                      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td valign="top" align="center" bgcolor="#ab1ee6">
+                              <!-- FLEXIBLE CONTAINER // -->
+                              <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="flexibleContainerCell" width="600" valign="top">
+
+
+                                      <!-- CONTENT TABLE // -->
+                                      <table class="flexibleContainer" width="200" cellspacing="0" cellpadding="0" border="0" align="left">
+                                        <tbody>
+                                          <tr>
+                                            <td class="imageContent" valign="top" align="Left">
+                                              <img src="img/logoqiip.png" class="flexibleImage" style="max-width:150px;" width="150px">
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <!-- // CONTENT TABLE -->
+
+
+                                      <!-- CONTENT TABLE // -->
+                                      <table class="flexibleContainer" width="340" cellspacing="0" cellpadding="0" border="0" align="right">
+                                        <tbody>
+                                          <tr>
+                                            <td class="textContent" valign="top" align="left">
+
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <!-- // CONTENT TABLE -->
+
+
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- // FLEXIBLE CONTAINER -->
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- // CENTERING TABLE -->
+                    </td>
+                  </tr>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!-- // MODULE ROW -->
+            <!-- MODULE ROW // -->
+            <tr>
+              <td valign="top">
+                <img src="img/banner.jpg" style="max-width:600px;display:block;" />
+              </td>
+            </tr>
+            <!--ONE SECTION -->
+            <tr>
+              <td valign="top" align="center">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center" style="padding:0;">
+                                <!-- CONTENT TABLE // -->
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="imageContentLast" valign="top">
+                                        <a href="#"><img src="img/banner2.jpg" class="flexibleImage" style="max-width:600px; display:block;" width="100%"></a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--// ONE SECTION -->
+            <!--TWO SECTION //-->
+
+            <!--//TWO SECTION -->
+            <!--TRHEE SECTION // -->
+            <tr>
+              <td valign="top" align="center" bgcolor="#01e4d9">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center">
+                                <!-- CONTENT TABLE // -->
+
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="textContent2" valign="top">
+                                        <p style="text-align:center;font-size:16px; margin:0; padding:0; color:#000">En qiip tus empleados pueden guardar<br />parte de su salario directamente desde <br /> n&oacute;mina y convertir el ahorro en un <br /> h&aacute;bito para alcanzar grandes metas.</p>
+                                        <hr style="border-style: solid; border-color: #ab1ee6; width: 50%; margin-top: 24px;">
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+
+
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--//TRHEE SECTION -->
+            <!-- -->
+            <tr>
+              <td valign="top" align="center">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center" style="padding:0;">
+                                <!-- CONTENT TABLE // -->
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="imageContentLast" valign="top">
+                                        <a href="#"><img src="img/btncta.png" class="flexibleImage" style="max-width:600px;" width="100%"></a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--// -->
+            <!-- -->
+            <tr>
+              <td valign="top" align="center">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center">
+                                <!-- CONTENT TABLE // -->
+
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="textContent2" valign="top">
+                                        <p style="text-align:center;font-size:12px; margin:0; padding:0;margin-top: 20px;">
+                                          <Strong>Todos los derechos reservados 2017 &copy; SURA</Strong><br />Estas recibiendo este mail porque est&aacute;s suscrito a nuestro newsletter.</p>
+                                        <p style="text-align:center;font-size:14px; margin:0; padding:0;"><a style="color:#ab1ee6;" href="#"> Desuscribirme</a> de esta lista</p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--// -->
+            <!-- -->
+            <tr>
+              <td valign="top" align="center">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center">
+                                <!-- CONTENT TABLE // -->
+
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="textContent2" valign="top">
+                                        <p style="text-align:center;font-size:11px; margin:0; padding:0;">La informaci&oacute;n contenida en este correo electr&oacute;nico es confidencial y est&aacute; protegida legalmente. Est&aacute; dirigido<br /> solamente a la direcci&oacute;n de correo se&ntilde;alada y el acceso
+                                          a cualquier otra persona, no est&aacute; autorizado. Si no <br /> es el receptor de este correo electr&oacute;nico, cualquier difunsi&oacute;n, copia o distribuci&oacute;n est&aacute; prohibida y puede ser ilegal.
+                                          Si lo ha recibido por error, por favor notifique al emisor, b&oacute;rrelo de forma permanente y destruya <br />cualquier copia impresa</p>
+                                        <p style="text-align:center;font-size:11px; margin:0; padding:0;">En caso de que el correo est&eacute; dirigido a alguno de nuestros clientes, la opini&oacute;n o recomendaci&oacute;n contenida<br /> est&aacute; sujeta a las condiciones regulatorias de qiip y/o SURA que resulten
+                                          aplicables o a los acuerdos<br /> comerciales suscritos con el cliente.</p>
+
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--// -->
+          </table>
+          <!-- // EMAIL CONTAINER -->
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+
+</html>
