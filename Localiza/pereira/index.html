@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Mail Localiza</title>
+  <style type="text/css">
+    /*////// RESET STYLES //////*/
+
+    body,
+    #bodyTable,
+    #bodyCell {
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    img,
+    a img {
+      border: 0;
+      outline: none;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    /*////// CLIENT-SPECIFIC STYLES //////*/
+
+    .ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    /* Force Hotmail/Outlook.com to display emails at full width. */
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    /* Force Hotmail/Outlook.com to display line heights normally. */
+
+    table,
+    td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    /* Remove spacing between tables in Outlook 2007 and up. */
+
+    #outlook a {
+      padding: 0;
+    }
+
+    /* Force Outlook 2007 and up to provide a "view in browser" message. */
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    /* Force IE to smoothly render resized images. */
+
+    body,
+    table,
+    td,
+    p,
+    a,
+    li,
+    blockquote {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
+
+    /*////// FRAMEWORK STYLES //////*/
+
+    .flexibleContainerCell {
+      padding-top: 20px;
+      padding-Right: 20px;
+      padding-Left: 20px;
+    }
+
+    .flexibleContainerCell2 {
+      padding-top: 0;
+      padding-Right: 0;
+      padding-Left: 0;
+    }
+
+    .flexibleImage {
+      height: auto;
+    }
+
+    .bottomShim {
+      padding-bottom: 20px;
+    }
+
+    .imageContent,
+    .imageContentLast {
+      padding-bottom: 20px;
+    }
+
+    .imgContent {padding-bottom: 0;}
+
+    .nestedContainerCell {
+      padding-top: 20px;
+      padding-Right: 20px;
+      padding-Left: 20px;
+    }
+
+    /*////// GENERAL STYLES //////*/
+
+    body,
+    #bodyTable {
+      background-color: #F5F5F5;
+    }
+
+    #bodyCell {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    #emailBody {
+      background-color: #FFFFFF;
+      border: 1px solid #DDDDDD;
+      border-collapse: separate;
+      border-radius: 4px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #989898;
+      font-family: Tahoma;
+      font-size: 20px;
+      line-height: 125%;
+      text-align: Left;
+    }
+
+    .textContent,
+    .textContentLast {
+      color: #989898;
+      font-family: Tahoma;
+      font-size: 14px;
+      line-height: 125%;
+      text-align: Left;
+      padding-bottom: 20px;
+    }
+
+    .textContent a,
+    .textContentLast a {
+      color: #404040;
+      text-decoration: underline;
+    }
+
+    .nestedContainer {
+      background-color: #E5E5E5;
+      border: 1px solid #CCCCCC;
+    }
+
+    .emailButton {
+      background-color: #b7cd06;
+      border-collapse: separate;
+      border-radius: 4px;
+    }
+
+    .buttonContent {
+      color: #00531b;
+      font-family: Tahoma;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 100%;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .buttonContent a {
+      color: #00531b;
+      display: block;
+      text-decoration: none;
+    }
+
+    /*////// MOBILE STYLES //////*/
+
+    @media only screen and (max-width: 480px) {
+
+      /*////// CLIENT-SPECIFIC STYLES //////*/
+      body {
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+
+      /* Force iOS Mail to render the email at full width. */
+      table[id="emailBody"],
+      table[class="flexibleContainer"] {
+        width: 100% !important;
+      }
+
+      img[class="flexibleImage"] {
+        height: auto !important;
+        width: 100% !important;
+      }
+
+      table[class="emailButton"] {
+        width: 100% !important;
+      }
+
+      td[class="buttonContent"] {
+        padding: 0 !important;
+      }
+
+      td[class="buttonContent"] a {
+        padding: 15px !important;
+      }
+
+      td[class="textContentLast"],
+      td[class="imageContentLast"] {
+        padding-top: 20px !important;
+      }
+
+      /*////// GENERAL STYLES //////*/
+      td[id="bodyCell"] {
+        padding-top: 10px !important;
+        padding-Right: 10px !important;
+        padding-Left: 10px !important;
+      }
+    }
+  </style>
+  <!--[if mso 12]>
+            <style type="text/css">
+            	.flexibleContainer{display:block !important; width:100% !important;}
+            </style>
+        <![endif]-->
+  <!--[if mso 14]>
+            <style type="text/css">
+            	.flexibleContainer{display:block !important; width:100% !important;}
+            </style>
+        <![endif]-->
+</head>
+
+<body>
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+      <tr>
+        <td align="center" valign="top" id="bodyCell">
+          <!-- EMAIL CONTAINER // -->
+
+          <table border="0" cellpadding="0" cellspacing="0" width="600" id="emailBody">
+            <!-- PRE HEADER // -->
+            <tr>
+              <td align="center" valign="top" bgcolor="#008c3c">
+                <!-- CENTERING TABLE // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td align="center" valign="top">
+                      <!-- FLEXIBLE CONTAINER // -->
+                      <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+                        <tr>
+                          <td valign="top" width="600" class="flexibleContainerCell">
+                            <!-- CONTENT LEFT // -->
+                            <table align="Left" border="0" cellpadding="0" cellspacing="0" width="260" class="flexibleContainer">
+                              <tr>
+                                <td valign="top" class="textContent" style="color:#fff;">
+                                  ¡Llegamos a <span style="color:#b7cd06; font-weight:bold;">Tunja!</span>
+                                </td>
+                              </tr>
+                            </table>
+                            <!-- // CONTENT RIGHT -->
+                            <!-- CONTENT TABLE // -->
+                            <table align="Right" border="0" cellpadding="0" cellspacing="0" width="260" class="flexibleContainer">
+                              <tr>
+                                <td valign="top" class="textContentLast" style="font-size:14px;color:#fff;">
+                                  ¿No te muestra el contenido?<a style="color: #b7cd06;font-weight: bold;" href="#" target="_blank">Clic aqui</a>.
+                                </td>
+                              </tr>
+                            </table>
+                            <!-- // CONTENT TABLE -->
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- // FLEXIBLE CONTAINER -->
+                    </td>
+                  </tr>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!-- //PRE HEADER -->
+            <!--HEADER -->
+            <tr>
+              <td valign="top" align="center" bgcolor="#008c3c">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center" style="padding:0;">
+                                <!-- CONTENT TABLE // -->
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="imageContent" valign="top" style="padding:0;">
+                                        <img src="img/logo.png" class="flexibleImage" style="max-width:290px;display:block;margin: auto;" width="290px">
+
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--//HEADER -->
+            <!--BANNER -->
+            <tr>
+              <td valign="top" align="center">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell2" width="600" valign="top" align="center" style="padding:0;">
+                                <!-- CONTENT TABLE // -->
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="imgContent" valign="top" style="padding:0;">
+                                        <img style="display:block;" src="img/banner.jpg" class="flexibleImage" style="max-width:600px;display:block;" width="100%">
+
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--//BANNER -->
+            <!--SECCION 1 -->
+            <tr>
+              <td valign="top" align="center" bgcolor="#008c3c">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center">
+                                <!-- CONTENT TABLE // -->
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="textContent" valign="top">
+                                        <h3 style="color:#fff;text-align:center;font-size: 30px; line-height: 90%;margin-bottom:20px;">Aeropuerto Internacional<br /><strong>Mateca&ntilde;a.</strong></h3>
+                                        <hr style="border-style: solid; border-color: #b7cd06; width: 14%;">
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--//SECCION 1 -->
+            <!--SECCION 2 -->
+            <tr>
+              <td valign="top" align="center" bgcolor="#008c3c">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center" style="padding-top:0;">
+                                <!-- CONTENT TABLE // -->
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="textContent" valign="top">
+                                        <p style="color:#fff;text-align:center;font-size:18px;margin:0;">Tenemos 10 gamas de veh&iacute;culos y precios<br />especiales para que elijas lo mejor para tu viaje.<br /><br/><strong style="font-size:24px;">Kil&oacute;metro 4, V&iacute;a Cerritos.</strong><br /><br />Horarios de atenci&oacute;n: Lunes a Viernes de 7a.m. - 9p.m.<br />S&aacute;bados, Domingos y Festivos: 8a.m. - 5 p.m.</p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--//SECCION 2 -->
+            <!--CTA -->
+            <tr>
+              <td valign="top" align="center" bgcolor="#008c3c">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell bottomShim" width="600" valign="top" align="center">
+                                <!-- CONTENT TABLE // -->
+                                <table class="emailButton" width="260" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="buttonContent" valign="middle" align="center">
+                                        <a href="#" target="_blank">¡VIS&Iacute;TANOS!</a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+
+            <!--//CTA -->
+            <!--SECCION 3 -->
+            <tr>
+              <td valign="top" align="center" bgcolor="#008c3c">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center">
+                                <!-- CONTENT TABLE // -->
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="textContent" valign="top">
+                                        <h3 style="color:#fff;text-align:center;font-size: 30px; line-height: 90%; font-weight:400;">018000 52 0001 <br /> 350 280 6368</h3>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+
+
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--//SECCION 3 -->
+
+            <!--FOOTER -->
+            <tr>
+              <td valign="top" align="center" bgcolor="#b7cd06">
+                <!-- CENTERING TABLE // -->
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table class="flexibleContainer" width="600" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="600" valign="top" align="center" style="padding-top:0">
+                                <!-- CONTENT TABLE // -->
+                                <table width="50%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="textContent" valign="top">
+                                        <p style="color: #fff;text-align: center;font-weight: bold;font-family: Tahoma;padding-bottom: 0px;margin-bottom: 0px;">www.localiza.com</p>
+                                      </td>
+                                      <td>
+                                        <a href="#"><img src="img/iconfb.png" alt="" width="35px;" style="max-width:35px;"></a>
+
+                                      </td>
+                                      <td>
+                                        <a href="#"><img src="img/iconinst.png" alt="" width="35px;" style="max-width:35px;"></a>
+
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="top" class="textContent" colspan="3" >
+                                        <p style="color: #fff;text-align: center;font-weight: 300;font-family: Tahoma;font-size: 12px;margin:0;"><a style="color:#00531b;" href="#">Desuscribirme</a> de esta lista</p>
+                                      </td>
+                                    </tr>
+
+                                  </tbody>
+                                </table>
+                                <!-- // CONTENT TABLE -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+            <!--//FOOTER -->
+          </table>
+          <!-- // EMAIL CONTAINER -->
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+
+</html>
