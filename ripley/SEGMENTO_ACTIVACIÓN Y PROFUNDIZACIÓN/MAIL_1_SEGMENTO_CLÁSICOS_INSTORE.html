@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Banco Ripley</title>
+  <style type="text/css">
+    /*////// RESET STYLES //////*/
+
+    body,
+    #bodyTable,
+    #bodyCell {
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    img,
+    a img {
+      border: 0;
+      outline: none;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    /*////// CLIENT-SPECIFIC STYLES //////*/
+
+    .ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    /* Force Hotmail/Outlook.com to display emails at full width. */
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    /* Force Hotmail/Outlook.com to display line heights normally. */
+
+    table,
+    td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    /* Remove spacing between tables in Outlook 2007 and up. */
+
+    #outlook a {
+      padding: 0;
+    }
+
+    /* Force Outlook 2007 and up to provide a "view in browser" message. */
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    /* Force IE to smoothly render resized images. */
+
+    body,
+    table,
+    td,
+    p,
+    a,
+    li,
+    blockquote {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
+
+    /*////// FRAMEWORK STYLES //////*/
+
+    .flexibleContainerCell {
+      padding-top: 20px;
+      padding-Right: 20px;
+      padding-Left: 20px;
+    }
+
+    .flexibleContainerCell2 {
+      padding-top: 0;
+      padding-Right: 20px;
+      padding-Left: 20px;
+    }
+
+    .flexibleImage {
+      height: auto;
+    }
+
+    .bottomShim {
+      padding-bottom: 20px;
+    }
+
+    .imageContent,
+    .imageContentLast {
+      padding-bottom: 20px;
+    }
+
+    .nestedContainerCell {
+      padding-top: 20px;
+      padding-Right: 20px;
+      padding-Left: 20px;
+    }
+
+    /*////// GENERAL STYLES //////*/
+
+    body,
+    #bodyTable {
+      /*background-color: #F5F5F5;*/
+    }
+
+    #bodyCell {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    #emailBody {
+      background-color: #FFFFFF;
+      /*border: 1px solid #DDDDDD;
+      border-collapse: separate;
+      border-radius: 4px;*/
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #989898;
+      font-family: Helvetica;
+      font-size: 20px;
+      line-height: 125%;
+      text-align: Left;
+    }
+
+    .textContent,
+    .textContentLast {
+      color: #818181;
+      font-family: Helvetica;
+      font-size: 14px;
+      line-height: 125%;
+      text-align: Left;
+      padding-bottom: 20px;
+    }
+
+    .textContent a,
+    .textContentLast a {
+      color: #404040;
+      text-decoration: underline;
+    }
+
+    .nestedContainer {
+      background-color: #E5E5E5;
+      border: 1px solid #CCCCCC;
+    }
+
+    .emailButton {
+      background-color: #2C9AB7;
+      border-collapse: separate;
+      border-radius: 4px;
+    }
+
+    .buttonContent {
+      color: #FFFFFF;
+      font-family: Helvetica;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 100%;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .buttonContent a {
+      color: #FFFFFF;
+      display: block;
+      text-decoration: none;
+    }
+
+    .emailCalendar {
+      background-color: #FFFFFF;
+      border: 1px solid #CCCCCC;
+    }
+
+    .emailCalendarMonth {
+      background-color: #2C9AB7;
+      color: #FFFFFF;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    .emailCalendarDay {
+      color: #2C9AB7;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 60px;
+      font-weight: bold;
+      line-height: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    /*////// MOBILE STYLES //////*/
+
+    @media only screen and (max-width: 480px) {
+
+      /*////// CLIENT-SPECIFIC STYLES //////*/
+      body {
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+
+      /* Force iOS Mail to render the email at full width. */
+      table[id="emailBody"],
+      table[class="flexibleContainer"] {
+        width: 100% !important;
+      }
+
+      img[class="flexibleImage"] {
+        height: auto !important;
+        width: 100% !important;
+      }
+
+      table[class="emailButton"] {
+        width: 100% !important;
+      }
+
+      td[class="buttonContent"] {
+        padding: 0 !important;
+      }
+
+      td[class="buttonContent"] a {
+        padding: 15px !important;
+      }
+
+      td[class="textContentLast"],
+      td[class="imageContentLast"] {
+        padding-top: 20px !important;
+      }
+
+      /*////// GENERAL STYLES //////*/
+      td[id="bodyCell"] {
+        padding-top: 10px !important;
+        padding-Right: 10px !important;
+        padding-Left: 10px !important;
+      }
+    }
+  </style>
+  <!--[if mso 12]>
+            <style type="text/css">
+            	.flexibleContainer{display:block !important; width:100% !important;}
+            </style>
+        <![endif]-->
+  <!--[if mso 14]>
+            <style type="text/css">
+            	.flexibleContainer{display:block !important; width:100% !important;}
+            </style>
+        <![endif]-->
+</head> 
+  
+<body>
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+      <tr>
+        <td align="center" valign="top" id="bodyCell">
+          <!-- EMAIL CONTAINER // -->
+
+          <table border="0" cellpadding="0" cellspacing="0" width="700" id="emailBody">
+                     
+         
+             <!-- PRE HEADER // -->
+            <tr>
+              <td align="center" valign="top">
+                <!-- CENTERING TABLE // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#e7e8e9">
+                  <tr>
+                    <td align="center" valign="top">
+                      <!-- FLEXIBLE CONTAINER // -->
+                      <table border="0" cellpadding="0" cellspacing="0" width="700" class="flexibleContainer">
+                        <tr>
+                          <td valign="top" width="700" class="flexibleContainerCell">
+                            <!-- CONTENT LEFT // -->
+                            <table align="Left" border="0" cellpadding="0" cellspacing="0" width="260" class="flexibleContainer">
+                              <tr>
+                                <td valign="top" class="textContent">
+                                 ¡Bienvenido a #PasalaGenial! 
+                                </td>
+                              </tr>
+                            </table>
+                            <!-- // CONTENT RIGHT -->
+                            <!-- CONTENT TABLE // -->
+                            <!--
+                            <table align="Right" border="0" cellpadding="0" cellspacing="0" width="260" class="flexibleContainer">
+                              <tr>
+                                <td valign="top" class="textContentLast" style="font-size:14px;">
+                                  ¿No te muestra el contenido?<a style="color: #53208b;font-weight: bold;" href="#" target="_blank">Clic aqui</a>.
+                                </td>
+                              </tr>
+                            </table>
+                            -->
+                            <!-- // CONTENT TABLE -->
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- // FLEXIBLE CONTAINER -->
+                    </td>
+                  </tr>
+                </table>
+                <!-- // CENTERING TABLE -->
+              </td>
+            </tr>
+           
+             
+             <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_02.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>  
+             
+        
+              <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>
+                      <td>
+                        <div class="">
+                            <p class="" style="font-size: 28px;margin-top: 20px;margin-bottom: 5px;font-family:Arial,sans-serif;text-align: left;color: #000000; padding-left: 85px;">
+                                   Hola <strong><*NOMBRE*></</strong> 
+                            </p>                            
+                        </div>
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr> 
+             
+                           
+              <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_04.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>                                 
+                                                       
+              <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_05.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>                         
+                                                                                                         
+                                                                                                                                           
+              <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_06.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>                                                                                                                                                   
+                                                                                                                                                                       
+              <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>
+                      <td>
+                        <div class="">
+                            <p class="" style="font-size: 17px;margin-top: 5px;margin-bottom: 20px;font-family:Arial,sans-serif;text-align: center;color: #000000;">
+                                   Pasarla GENIAL, es convertir las compras hechas con tu <br/><strong>Tarjeta Ripley en PREMIOS</strong>
+                            </p>
+                            <p class="" style="font-size: 17px;margin-top: 0px;margin-bottom: 3px;font-family:Arial,sans-serif;text-align: center;color: #000000;">
+                                ¡Súbele al nivel de tu genialómetro hasta canjear <br>el premio que quieras!
+                            </p>                         
+                        </div>
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>                                                                                                                                                                           
+                                                                                                                                                                                                   
+                                                                                                                                                                                                                 
+             <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_08.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                           
+             <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>
+                      <td>
+                        <div class="">
+                            <p class="" style="font-size: 17px;margin-top: 5px;margin-bottom: 3px;font-family:Arial,sans-serif;text-align: center;color: #000000;">
+                                Sólo tienes que completar <*MONTO*> en compras con <br/>tu <strong>Tarjeta Ripley</strong>, en Tiendas Ripley y Ripley.com para ganar.
+                            </p>                        
+                        </div>
+                      </td>
+                  </tr>
+              </table>
+            </td>
+          </tr>                                                                                                                                                                                                                                                                 
+          
+             <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_06.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                     
+             <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>
+                      <td>
+                        <div class="">
+                            <p class="" style="font-size: 17px;margin-top: 5px;margin-bottom: 15px;font-family:Arial,sans-serif;text-align: center;color: #372680; font-weight: bold;">
+                                   Premios
+                            </p>                           
+                        </div>
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>                                                                                                                                                                                                                                                                         
+                                              
+                                                                                                                    
+        <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td width="70">
+                            <img src="img/btn_01.jpg" style="display: block;width: 100%">
+                      </td>
+                      <td width="186">
+                         <a href="#" target="_blank">
+                             <img src="img/btn_02.jpg" style="display: block;width: 100%">
+                          </a>
+                      </td>
+                      <td width="186">
+                         <a href="#" target="_blank">
+                             <img src="img/btn_03.jpg" style="display: block;width: 100%">
+                          </a>
+                      </td>
+                      <td width="188">
+                         <a href="#" target="_blank">
+                             <img src="img/btn_05.jpg" style="display: block;width: 100%">
+                          </a>
+                      </td>
+                      <td width="70">
+                            <img src="img/btn_01.jpg" style="display: block;width: 100%">
+                      </td>
+                  </tr>
+              </table>
+            </td>
+          </tr>                                                                                                                                   
+          <!--                                                                                                                              
+        <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_13.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>  
+           -->         
+                    
+        <!--                                                                                                                                    <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td width="350">
+                         <a href="#" target="_blank">
+                             <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_14.jpg" style="display: block;width: 100%">
+                          </a>
+                      </td>
+                      <td width="350">
+                        <a href="#" target="_blank">
+                             <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_15.jpg" style="display: block;width: 100%">
+                          </a>
+                      </td>
+                  </tr>
+              </table>
+            </td>
+          </tr>                                                            
+        -->
+         <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_16.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>                                                                                                                                                                                                                                                                           
+         <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>
+                      <td>
+                        <div class="">
+                            <p class="" style="font-size: 17px;margin-top: 5px;margin-bottom: 0px;font-family:Arial,sans-serif;text-align: center;color: #000000; font-weight: bold;">
+                                   Ingresa hoy mismo a
+                            </p>
+                            <p class="" style="font-size: 25px;margin-top: 5px;margin-bottom: 0px;font-family:Arial,sans-serif;text-align: center;color: #372680; font-weight: bold;">
+                                   www.pasalagenial.com.pe
+                            </p> 
+                            <p class="" style="font-size: 17px;margin-top: 5px;margin-bottom: 15px;font-family:Arial,sans-serif;text-align: center;color: #000000; font-weight: bold;">
+                                   y conoce de qué se trata ¿Qué esperas?
+                            </p>  
+                            <div style="width:60px; height: 1; background-color:#372680; margin:10px auto 50px auto;"></div>                        
+                        </div>
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>  
+          
+          <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_19.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>  
+          
+          
+          
+          <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_20.jpg" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr> 
+          
+          
+          
+          <!--
+         <tr>
+              <td valign="top" align="center">
+                
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" align="center">
+                        
+                        <table class="flexibleContainer" width="700" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="flexibleContainerCell" width="700" valign="top" align="center" style="padding-top:0">
+                                
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td class="textContent" valign="top">
+                                        <p style="color: #989898;text-align: right;font-weight: 300;font-family: helvetica;font-size: 12px;"><a style="color:#a000e8;" href="#">Desuscribirme</a> de esta lista</p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+              </td>
+            </tr> 
+          -->
+          
+          
+          <tr>
+            <td>
+              <table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="">
+                  <tr>                     
+                      <td>
+                        <img src="img/MAIL-1-SEGMENTO_ACTIVACION-Y-PROFUNDIZACION_25.png" style="display: block;width: 100%">
+                      </td>
+                      
+                  </tr>
+              </table>
+            </td>
+          </tr>           
+          
+     </table>
+          </td>
+        </tr>
+      </table> 
+    </center>
+    </body>                                                                                                                                                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                                                   
+         
+</html>
